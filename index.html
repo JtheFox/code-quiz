@@ -12,14 +12,32 @@
     <section class="info">
         <h1>Code Quiz</h1>
         <p>Code Quiz Description</p>
-        <button id="quiz-start" class="btn">Start Quiz</button>
+        <button class="btn quiz-start">Start Quiz</button>
     </section>
 
     <section class="hiscores">
     </section>
 
-    <section id="quiz-window" class="modal"></section>
+    <section class="modal quiz-window">
+        <header class="quiz-title-bar">
+            <p>Code Quiz</p>
+            <span id="quiz-exit">X</span>
+        </header>
+        <div class="quiz-status">
+            <p>Question <span id="question-num">?</span> of <span id="question-total">?</span></p>
+            <p>Time: <span id="timer">0:00</span></p>
+        </div>
+        <div class="quiz-content">
+            <p id="quiz-question">What is 2 + 2?</p>
+            <ul id="quiz-answers">
+                <li>Answer 1</li>
+                <li>Answer 2</li>
+                <li>Answer 3</li>
+                <li>Answer 4</li>
+            </ul>
+        </div>
+    </section>
     
-    <section id="hiscores-input" class="modal"></section>
+    <section class="modal hiscores-input"></section>
 </body>
 </html>

@@ -1,0 +1,87 @@
+/* Make quiz window in Windows 98 style (?) */
+/* References: 
+https://www.deviantart.com/mariofan345/art/Blank-Windows-98-Window-Template-802362529
+https://jdan.github.io/98.css/ */
+/* Windows color palette */
+:root {
+    --win-white: #fdffff;
+    --win-lightgray: #c3c3c3;
+    --win-gray: #818181;
+    --win-black: #000;
+    --win-blue: #010081;
+}
+
+html {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.modal {
+    background-color: var(--win-lightgray);
+}
+
+.quiz-window {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 0.1rem;
+}
+
+.quiz-window :is(.quiz-title-bar, .quiz-status) {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.quiz-window .quiz-title-bar {
+    margin: 0;
+}
+
+.quiz-window .quiz-title-bar {
+    background: var(--win-blue);
+}
+
+.quiz-title-bar p:first-child {
+    margin: 0.15rem auto 0.15rem 0.5rem;
+    color: var(--win-white)
+}
+
+.quiz-title-bar span {
+    background-color: var(--win-lightgray);
+    text-align: center;
+    color: var(--win-black);
+    margin: 0.15rem;
+    width: 1.15rem;
+    height: 1.15rem;
+}
+
+:is(.quiz-status, .quiz-content) {
+    padding: 0 1rem;
+    margin: 0.25rem;
+    background: #fff;
+}
+
+.quiz-status p:first-child {
+    margin-right: auto;
+}
+
+.quiz-status p {
+    margin-right: 0.5rem;
+    font-size: larger;
+}
+
+.quiz-status #timer.urgent {
+    color: red;
+}
+
+.quiz-content #quiz-answers {
+    padding-left: 0;
+}
+
+.quiz-content #quiz-answers li {
+    list-style-type: none;
+    background-color: aqua;
+    width: 20rem;
+    height: fit-content;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
