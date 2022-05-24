@@ -1,0 +1,33 @@
+/* Make quiz window in Windows 98 style (?) */
+/* References: 
+https://jdan.github.io/98.css/ */
+/* Windows color palette */
+:root {
+    --win-white: #fdffff;
+    --win-lightgray: #c3c3c3;
+    --win-gray: #818181;
+    --win-black: #000;
+    --win-blue: #010081;
+}
+
+html {
+    background: #008080;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.quiz-window {
+    min-width: 50%;
+    max-width: fit-content;
+    padding: 0.1rem;
+}
+
+.quiz-content {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+

@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/css/win98.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/script.js"></script>
     <title>Code Quiz</title>
 </head>
 <body>
     <section class="info">
-        <h1>Code Quiz</h1>
+        <h2>Code Quiz</h2>
         <p>Code Quiz Description</p>
         <button class="btn quiz-start">Start Quiz</button>
     </section>
@@ -18,23 +19,36 @@
     <section class="hiscores">
     </section>
 
-    <section class="modal quiz-window">
-        <header class="quiz-title-bar">
-            <p>Code Quiz</p>
-            <span id="quiz-exit">X</span>
+    <section class="modal quiz-window window">
+        <header class="quiz-title-bar title-bar">
+            <div class="title-bar-text">Code Quiz</div>
+            <div class="title-bar-controls">
+                <button aria-label="Close"></button>
+            </div>
         </header>
-        <div class="quiz-status">
-            <p>Question <span id="question-num">?</span> of <span id="question-total">?</span></p>
-            <p>Time: <span id="timer">0:00</span></p>
+        <div class="window-body quiz-content">
+            <div class="field-row">Question?</div>
+            <div class="field-row">
+                <input id="answer1" type="radio" name="quiz-question">
+                <label for="answer1">Answer 1</label>
+            </div>
+            <div class="field-row">
+                <input id="answer2" type="radio" name="quiz-question">
+                <label for="answer2">Answer 2</label>
+            </div>
+            <div class="field-row">
+                <input id="answer3" type="radio" name="quiz-question">
+                <label for="answer3">Answer 3</label>
+            </div>
+            <div class="field-row">
+                <input id="answer4" type="radio" name="quiz-question">
+                <label for="answer4">Answer 4</label>
+            </div>
         </div>
-        <div class="quiz-content">
-            <p id="quiz-question">What is 2 + 2?</p>
-            <ul id="quiz-answers">
-                <li>Answer 1</li>
-                <li>Answer 2</li>
-                <li>Answer 3</li>
-                <li>Answer 4</li>
-            </ul>
+        <div class="status-bar">
+            <p class="status-bar-field">Question <span id="question-num">?</span> of <span id="question-total">?</span></p>
+            <p class="status-bar-field">Score: <span id="current-score">0</span></p>
+            <p class="status-bar-field">Time: <span id="timer">0:00</span></p>
         </div>
     </section>
     
