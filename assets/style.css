@@ -18,11 +18,14 @@ html {
 .modal {
     background-color: var(--win-lightgray);
 }
-
-.quiz-window {
+.modal.quiz-window {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
     display: flex;
     flex-direction: column;
-    width: 80%;
     padding: 0.1rem;
 }
 
