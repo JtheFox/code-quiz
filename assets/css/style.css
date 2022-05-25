@@ -1,6 +1,5 @@
 /* Make quiz window in Windows 98 style (?) */
-/* References: 
-https://jdan.github.io/98.css/ */
+/* References: https://jdan.github.io/98.css/ */
 /* Windows color palette */
 :root {
     --win-white: #fdffff;
