@@ -15,10 +15,6 @@ html {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-li {
-    cursor: pointer;
-}
-
 .modal {
     background-color: var(--win-lightgray);
 }
@@ -91,4 +87,10 @@ li {
     height: fit-content;
     margin: 0.5rem;
     padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+#quiz-answers li:hover {
+    background: gray;
 }
