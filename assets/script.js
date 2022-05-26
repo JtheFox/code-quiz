@@ -1,5 +1,6 @@
 let currQuestion, points, time;
-const timeLimit = 50;
+let timeLimit = 50;
+let maxPoints = 100;
 
 /* this is a shorthand function like in jquery
 takes in query paramater and boolean value representing the use of querySelectorAll
@@ -21,6 +22,10 @@ let timer = setInterval(function () {
     }
 }, 1000);
 
+/* quiz init function
+display quiz window, set global variables to quiz initial values
+set element displays to initial values
+*/
 function startQuiz() {
     console.log('Starting quiz');
     $('.quiz-window').style.display = 'flex';
@@ -31,6 +36,9 @@ function startQuiz() {
     displayQuestion(questionList[currQuestion]);
 }
 
+/* quiz end function
+clear timer interval, hide quiz window, display hiscores input
+*/
 function finishQuiz() {
     clearInterval(timer);
     console.log(`Quiz complete, you got ${points} points with ${time} seconds remaining`);
@@ -38,15 +46,21 @@ function finishQuiz() {
 }
 
 function evalAnswer(event) {
+    // get the answer choice clicked by the user
     let ansChoice = event.currentTarget.textContent;
+
+    // compare user answer to correct answer of current question
+    // calculate points/time change based on maximum value divided by number of questions
     if (ansChoice === questionList[currQuestion].answer) {
-        points += 20;
+        points += maxPoints / questionList.length;
         console.log('Correct');
     } else {
-        time -= 10;
+        time -= timeLimit / questionList.length;
         console.log('Wrong');
     }
 
+    // if current question is the last question, finish the quiz
+    // otherwise, move to next question
     if (currQuestion + 1 === questionList.length) {
         finishQuiz();
     } else {
@@ -55,6 +69,9 @@ function evalAnswer(event) {
     }
 }
 
+/* question display function
+change question number, question and answer choices element displays
+*/
 function displayQuestion(question) {
     $('#question-num').textContent = currQuestion + 1;
     $('#quiz-question').textContent = question.question;
