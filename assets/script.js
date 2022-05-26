@@ -1,6 +1,7 @@
 let currQuestion, points, time;
 let timeLimit = 50;
 let maxPoints = 100;
+let timer;
 
 /* this is a shorthand function like in jquery
 takes in query paramater and boolean value representing the use of querySelectorAll
@@ -10,17 +11,6 @@ function $(selector, all = false) {
     else return document.querySelector(selector);
 }
 
-// create timer
-let timer = setInterval(function () {
-    time--;
-    $('#timer').innerText = time;
-    if (time < 10) {
-        $('#timer').innerText = `0${time}`;
-    }
-    if (time < 0) {
-        finishQuiz();
-    }
-}, 1000);
 
 /* quiz init function
 display quiz window, set global variables to quiz initial values
@@ -34,6 +24,18 @@ function startQuiz() {
     $('#timer').innerText = time;
     $('#question-total').textContent = questionList.length;
     displayQuestion(questionList[currQuestion]);
+
+    // create timer
+    timer = setInterval(function () {
+        time--;
+        $('#timer').innerText = time;
+        if (time < 10) {
+            $('#timer').innerText = `0${time}`;
+        }
+        if (time < 0) {
+            finishQuiz();
+        }
+    }, 1000);
 }
 
 /* quiz end function
