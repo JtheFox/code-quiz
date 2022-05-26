@@ -85,6 +85,7 @@ function displayQuestion(question) {
 // create event listeners
 $('.quiz-start').addEventListener('click', startQuiz);
 $('#quiz-exit').addEventListener('click', finishQuiz);
+$('#submit-hiscore').addEventListener('click', submitHiscore);
 for (let li of $('li', true)) {
     li.addEventListener('click', evalAnswer);
 }
