@@ -99,13 +99,31 @@ function submitHiscore() {
 
     let hiscores = JSON.parse(localStorage.getItem('hiscores')) || [];
     hiscores.push(user);
+    hiscores.sort((a, b) => { b.score - a.score; }); // sort by highest score first
     localStorage.setItem('hiscores', JSON.stringify(hiscores));
     updateHiscores();
     $('.hiscores-input').style.display = 'none';
 }
 
+/* hiscore update function
+get hiscores from localStorage, create display elements for each and append them to the display area
+*/
 function updateHiscores() {
-
+    let hiscores = JSON.parse(localStorage.getItem('hiscores')) || [];
+    $('.hiscores-list').innerHTML = '';
+    for (let user of hiscores) {
+        // create hiscore display elements
+        let hiscoreUser = document.createElement('div');
+        hiscoreUser.classList.add('user-score');
+        let userName = document.createElement('p');
+        userName.innerText = user.initials;
+        let userScore = document.createElement('p');
+        userScore.innerText = user.score;
+        // append elements
+        hiscoreUser.appendChild(userName);
+        hiscoreUser.appendChild(userScore);
+        $('.hiscores-list').appendChild(hiscoreUser);
+    }
 }
 
 function clearHiscores() {
@@ -119,3 +137,6 @@ $('#submit-hiscore').addEventListener('click', submitHiscore);
 for (let li of $('li', true)) {
     li.addEventListener('click', evalAnswer);
 }
+
+// display hiscores on page load
+updateHiscores();
