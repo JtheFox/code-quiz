@@ -17,6 +17,7 @@ display quiz window, set global variables to quiz initial values
 set element displays to initial values
 */
 function startQuiz() {
+    $('.clear-hiscores').style.display = 'none';
     $('.quiz-window').style.display = 'flex';
     currQuestion = points = 0;
     time = timeLimit;
@@ -27,13 +28,14 @@ function startQuiz() {
     // create timer
     timer = setInterval(function () {
         time--;
-        $('#timer').innerText = time;
-        if (time < 10) {
-            $('#timer').innerText = `0${time}`;
-        }
         if (time < 0) {
             time = 0;
             finishQuiz();
+        }
+        
+        $('#timer').innerText = time;
+        if (time < 10) {
+            $('#timer').innerText = `0${time}`;
         }
     }, 1000);
 }
@@ -44,11 +46,12 @@ clear timer interval, hide quiz window, display hiscores input
 function finishQuiz() {
     clearInterval(timer);
     $('.quiz-window').style.display = 'none';
+    $('.clear-hiscores').style.display = 'block';
 
     // hiscore input modal
     $('#final-score').textContent = points;
     $('#final-time').textContent = time;
-    $('.hiscores-input').style.display = 'flex';
+    $('.modal').style.display = 'block';
 }
 
 function evalAnswer(event) {
@@ -98,7 +101,8 @@ function submitHiscore() {
     hiscores.sort((a, b) => { return b.score - a.score; }); // sort by highest score first
     localStorage.setItem('hiscores', JSON.stringify(hiscores));
     updateHiscores();
-    $('.hiscores-input').style.display = 'none';
+    $('.modal').style.display = 'none';
+    $('#initials').value = '';
 }
 
 /* hiscore update function
@@ -134,6 +138,7 @@ $('#submit-hiscore').addEventListener('click', submitHiscore);
 for (let li of $('li', true)) {
     li.addEventListener('click', evalAnswer);
 }
+$('.clear-hiscores').addEventListener('click', function() { localStorage.removeItem('hiscores'); updateHiscores(); });
 
 // display hiscores on page load
 updateHiscores();

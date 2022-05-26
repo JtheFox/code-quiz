@@ -8,50 +8,56 @@
     <title>Code Quiz</title>
 </head>
 <body>
-    <section class="info">
-        <h1>Javascript Quiz</h1>
-        <p id="description"></p>
-        <button class="btn quiz-start">Start Quiz</button>
-    </section>
-
-    <section class="hiscores-display">
-        <h2>Hiscores</h2>
-        <div class="hiscores-list">
-            <div class="user-score">
-                <p>TEST</p>
-                <p>100</p>
+    <div class="content">
+        <section class="info">
+            <h1>Javascript Quiz</h1>
+            <p id="description"></p>
+            <button class="btn quiz-start">Start Quiz</button>
+        </section>
+        <section class="hiscores-display">
+            <h2>Hiscores</h2>
+            <div class="hiscores-list">
+                <div class="user-score">
+                    <p>TEST</p>
+                    <p>100</p>
+                </div>
             </div>
-        </div>        
-    </section>
+        </section>
+        <section class="quiz-window">
+            <header class="quiz-title-bar">
+                <p>Javascript Quiz</p>
+                <button id="quiz-exit">X</button>
+            </header>
+            <div class="quiz-status">
+                <p>Question <span id="question-num"></span> of <span id="question-total"></span></p>
+                <p>Time: <span id="timer"></span></p>
+            </div>
+            <div class="quiz-content">
+                <p id="quiz-question"></p>
+                <ul id="quiz-answers">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </section>
+        
+        <div class="modal">
+            <section class="hiscores-input">
+                <p>You scored <span id="final-score"></span> with <span id="final-time"></span> seconds left</p>
+                <div class="initials-input">
+                    <label for="initials">Enter your initials:</label>
+                    <input type="text" id="initials" name="initials">
+                </div>
+                <button id="submit-hiscore">Submit</button>
+            </section>
+        </div>
+    </div>
 
-    <section class="quiz-window">
-        <header class="quiz-title-bar">
-            <p>Code Quiz</p>
-            <button id="quiz-exit">X</button>
-        </header>
-        <div class="quiz-status">
-            <p>Question <span id="question-num"></span> of <span id="question-total"></span></p>
-            <p>Time: <span id="timer"></span></p>
-        </div>
-        <div class="quiz-content">
-            <p id="quiz-question"></p>
-            <ul id="quiz-answers">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-    </section>
-    
-    <section class="hiscores-input">
-        <p>You scored <span id="final-score"></span> with <span id="final-time"></span> seconds left</p>
-        <div class="initials-input">
-            <label for="initials">Enter your initials:</label>
-            <input type="text" id="initials" name="initials">
-        </div>
-        <button id="submit-hiscore">Submit</button>
-    </section>
+    <footer>
+        <button class="clear-hiscores">Clear Hiscores</button>
+    </footer>
 
     <script src="./assets/questions.js"></script>
     <script src="./assets/script.js"></script>
