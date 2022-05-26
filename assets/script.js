@@ -93,7 +93,7 @@ create user object, get, add to, and set hiscores from localStorage
 */
 function submitHiscore() {
     let user = {
-        initials: $('#initials').value?.substring(0,4) || 'ANON',
+        initials: $('#initials').value?.substring(0,4).toUpperCase() || 'ANON',
         score: points
     }
 
