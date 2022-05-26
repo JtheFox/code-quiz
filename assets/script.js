@@ -17,7 +17,6 @@ display quiz window, set global variables to quiz initial values
 set element displays to initial values
 */
 function startQuiz() {
-    console.log('Starting quiz');
     $('.quiz-window').style.display = 'flex';
     currQuestion = points = 0;
     time = timeLimit;
@@ -44,7 +43,6 @@ clear timer interval, hide quiz window, display hiscores input
 */
 function finishQuiz() {
     clearInterval(timer);
-    console.log(`Quiz complete, you got ${points} points with ${time} seconds remaining`);
     $('.quiz-window').style.display = 'none';
 
     // hiscore input modal
@@ -61,10 +59,8 @@ function evalAnswer(event) {
     // calculate points/time change based on maximum value divided by number of questions
     if (ansChoice === questionList[currQuestion].answer) {
         points += maxPoints / questionList.length;
-        console.log('Correct');
     } else {
         time -= timeLimit / questionList.length;
-        console.log('Wrong');
     }
 
     // if current question is the last question, finish the quiz
@@ -99,7 +95,7 @@ function submitHiscore() {
 
     let hiscores = JSON.parse(localStorage.getItem('hiscores')) || [];
     hiscores.push(user);
-    hiscores.sort((a, b) => { b.score - a.score; }); // sort by highest score first
+    hiscores.sort((a, b) => { return b.score - a.score; }); // sort by highest score first
     localStorage.setItem('hiscores', JSON.stringify(hiscores));
     updateHiscores();
     $('.hiscores-input').style.display = 'none';
@@ -111,7 +107,8 @@ get hiscores from localStorage, create display elements for each and append them
 function updateHiscores() {
     let hiscores = JSON.parse(localStorage.getItem('hiscores')) || [];
     $('.hiscores-list').innerHTML = '';
-    for (let user of hiscores) {
+    // get top 5 scores
+    for (let user of hiscores.slice(0,5)) {
         // create hiscore display elements
         let hiscoreUser = document.createElement('div');
         hiscoreUser.classList.add('user-score');
@@ -139,8 +136,7 @@ for (let li of $('li', true)) {
 }
 
 // display hiscores on page load
-// updateHiscores();
-clearHiscores(); //delete this
+updateHiscores();
 
 // use max values for text description
 $('#description').innerHTML = `Click the button to start the quiz.<br>
