@@ -11,15 +11,6 @@ const questionList = [
         ],
         answer: 'global variable'
     }, {
-        question: 'Which of the following type of variable takes precedence over other if names are same?',
-        choices: [
-            'global variable',
-            'local variable',
-            'Both of the above',
-            'None of the above'
-        ],
-        answer: 'local variable'
-    }, {
         question: 'Which of the following function of Array object reverses the order of the elements of an array?',
         choices: [
             'reverse()',
@@ -28,6 +19,15 @@ const questionList = [
             'invert()'
         ],
         answer: 'reverse()'
+    }, {
+        question: 'Which of the following type of variable takes precedence over other if names are same?',
+        choices: [
+            'global variable',
+            'local variable',
+            'Both of the above',
+            'None of the above'
+        ],
+        answer: 'local variable'
     }, {
         question: 'Which built-in method returns the calling string value converted to lower case?',
         choices: [
@@ -53,7 +53,7 @@ let currQuestion, points, time;
 /* this is a shorthand function like in jquery
 takes in query paramater and boolean value representing the use of querySelectorAll
 */
-function $ (query, all = false) {
+function $(query, all = false) {
     if (all) return document.querySelectorAll(query);
     else return document.querySelector(query);
 }
