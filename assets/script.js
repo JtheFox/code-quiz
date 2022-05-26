@@ -33,6 +33,7 @@ function startQuiz() {
             $('#timer').innerText = `0${time}`;
         }
         if (time < 0) {
+            time = 0;
             finishQuiz();
         }
     }, 1000);
@@ -45,6 +46,11 @@ function finishQuiz() {
     clearInterval(timer);
     console.log(`Quiz complete, you got ${points} points with ${time} seconds remaining`);
     $('.quiz-window').style.display = 'none';
+
+    // hiscore input modal
+    $('#final-score').textContent = points;
+    $('#final-time').textContent = time;
+    $('.hiscores-input').style.display = 'flex';
 }
 
 function evalAnswer(event) {
@@ -80,6 +86,30 @@ function displayQuestion(question) {
     for (let [i, li] of $('li', true).entries()) {
         li.textContent = question.choices[i];
     }
+}
+
+/* hiscore submit function
+create user object, get, add to, and set hiscores from localStorage
+*/
+function submitHiscore() {
+    let user = {
+        initials: $('#initials').value?.substring(0,4) || 'ANON',
+        score: points
+    }
+
+    let hiscores = JSON.parse(localStorage.getItem('hiscores')) || [];
+    hiscores.push(user);
+    localStorage.setItem('hiscores', JSON.stringify(hiscores));
+    updateHiscores();
+    $('.hiscores-input').style.display = 'none';
+}
+
+function updateHiscores() {
+
+}
+
+function clearHiscores() {
+    localStorage.removeItem('hiscores');
 }
 
 // create event listeners
