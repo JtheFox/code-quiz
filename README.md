@@ -1,5 +1,5 @@
-# Title
-Code Quiz
+# Code Quiz
+Mobile friendly!
 
 ## Table of Contents
 1. [Description](#description)
