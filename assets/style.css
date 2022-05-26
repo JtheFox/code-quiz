@@ -6,11 +6,14 @@ html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 100%;    
 }
 
 body {
+    margin-top: 15%;
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 button {
@@ -23,6 +26,7 @@ button {
 }
 
 button:hover {
+    color: #222;
     background: lightblue;
     border: 2px solid navy;
     box-shadow: 0px 2px 1px navy;
@@ -33,6 +37,18 @@ button:active {
     box-shadow: none;
 }
 
+.info {
+    text-shadow: 0.05em 0.05em 0.1em black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.info > h1 {
+    margin: 0;
+}
 
 .quiz-window {
     position: absolute;
@@ -88,9 +104,6 @@ button:active {
     font-size: larger;
 }
 
-.quiz-status #timer.urgent {
-    color: red;
-}
 
 .quiz-content #quiz-answers {
     padding-left: 0;
@@ -149,6 +162,15 @@ button:active {
 }
 
 @media only screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .info {
+        padding: 1rem 0.5rem;
+    }
+
     .hiscores-input {
         font-size: 1.1rem;
         top: 25%;

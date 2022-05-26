@@ -139,4 +139,10 @@ for (let li of $('li', true)) {
 }
 
 // display hiscores on page load
-updateHiscores();
+// updateHiscores();
+clearHiscores(); //delete this
+
+// use max values for text description
+$('#description').innerHTML = `Click the button to start the quiz.<br>
+    You will have ${timeLimit} seconds to answer ${questionList.length} questions.<br>
+    Good luck!`
