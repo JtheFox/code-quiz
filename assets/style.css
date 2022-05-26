@@ -1,16 +1,3 @@
-/* Make quiz window in Windows 98 style (?) */
-/* References: 
-https://www.deviantart.com/mariofan345/art/Blank-Windows-98-Window-Template-802362529
-https://jdan.github.io/98.css/ */
-/* Windows color palette */
-:root {
-    --win-white: #fdffff;
-    --win-lightgray: #c3c3c3;
-    --win-gray: #818181;
-    --win-black: #000;
-    --win-blue: #010081;
-}
-
 html {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -37,18 +24,18 @@ html {
 }
 
 .quiz-window .quiz-title-bar {
-    background: var(--win-blue);
+    background: blue;
 }
 
 .quiz-title-bar p:first-child {
     margin: 0.15rem auto 0.15rem 0.5rem;
-    color: var(--win-white)
+    color: white;
 }
 
 .quiz-title-bar span {
-    background-color: var(--win-lightgray);
+    background-color: lightgray;
     text-align: center;
-    color: var(--win-black);
+    color: black;
     margin: 0.15rem;
     width: 1.15rem;
     height: 1.15rem;
