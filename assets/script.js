@@ -49,11 +49,12 @@ const questionList = [
     }
 ]
 let currQuestion, points, time;
+const timeLimit = 50;
 
 /* this is a shorthand function like in jquery
 takes in query paramater and boolean value representing the use of querySelectorAll
 */
-function $(query, all = false) {
+function $(selector, all = false) {
     if (all) return document.querySelectorAll(query);
     else return document.querySelector(query);
 }
@@ -69,7 +70,19 @@ function startQuiz() {
     console.log('Starting quiz');
     $('.quiz-window').style.display = 'flex';
     currQuestion = points = 0;
-    time = 50;
+    time = timeLimit;
+    $('#timer').innerText = time;
+    // every time the quiz is opened, setInterval decreases +1 per instance
+    // setInterval(function () {
+    //     time--;
+    //     $('#timer').innerText = time;
+    //     if (time < 10) {
+    //         $('#timer').innerText = `0${time}`;
+    //     }
+    //     if (time < 0) {
+    //         finishQuiz();
+    //     }
+    // }, 1000);
 
     $('#question-total').textContent = questionList.length;
     displayQuestion(questionList[currQuestion]);
