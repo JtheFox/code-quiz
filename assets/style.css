@@ -1,6 +1,38 @@
 html {
+    font-size: 24px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: rgb(61,190,242);
+    background: radial-gradient(circle, rgba(61,190,242,1) 0%, rgba(0,206,255,1) 68%, rgba(61,190,242,1) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
 }
+
+body {
+    display: flex;
+}
+
+button {
+    background: white;
+    padding: 0.25em 0.5em;
+    font-size: 1em;
+    border: 2px solid gray;
+    border-radius: 0.25rem;
+    transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+    background: lightblue;
+    border: 2px solid navy;
+    box-shadow: 0px 2px 1px navy;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
 
 .quiz-window {
     position: absolute;
