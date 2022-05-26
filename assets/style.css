@@ -115,6 +115,7 @@ html {
 
 .initials-input {
     display: flex;
+    margin-bottom: 0.5em;
 }
 
 .initials-input input {
@@ -125,6 +126,10 @@ html {
     border: none;
     align-items: center;
     text-align: left;
+}
+
+.hiscores-input #submit-hiscore {
+    font-size: 0.7em;
 }
 
 @media only screen and (max-width: 768px) {
@@ -138,5 +143,9 @@ html {
 
     .hiscores-input .initials-input input {
         font-size: 1.1rem;
+    }
+
+    .hiscores-input #submit-hiscore {
+        font-size: 1rem;
     }
 }
