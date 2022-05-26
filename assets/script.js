@@ -1,20 +1,32 @@
-const Quiz = class {
-    constructor() {
-        // https://stackoverflow.com/questions/31559469/how-to-create-a-simple-javascript-timer
-        this.time = 60;
-        this.timer = setInterval(function () {
-            console.log(this.time);
-            document.getElementById('timer').innerHTML = '00:' + time;
-            this.time--;
-            if (this.time < 0) {
-                clearInterval(timer);
-            }
-        }, 1000);        
+// create questions
+
+
+/* this is a shorthand function like in jquery
+takes in query paramater and boolean value representing the use of querySelectorAll
+*/
+function $ (query, all = false) {
+    if (all) return document.querySelectorAll(query);
+    else return document.querySelector(query);
+}
+
+// create event listeners
+$('.quiz-start').addEventListener('click', startQuiz);
+for (let li of $('li', true)) {
+    li.addEventListener('click', evalAnswer)
+}
+
+function startQuiz() {
+    console.log('Starting quiz');
+}
+
+function evalAnswer(event) {
+    let ansChoice = event.currentTarget.textContent;
+    console.log(ansChoice);
+}
+
+function displayQuestion(currQuestion) {
+    $('#quiz-question').textContent = currQuestion.question;
+    for (let [i, li] of $('li', true)) {
+        li.textContent = currQuestion.choices[i];
     }
 }
-
-function timer() {
-    new Quiz();
-}
-
-timer();
