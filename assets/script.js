@@ -60,6 +60,7 @@ function $(query, all = false) {
 
 // create event listeners
 $('.quiz-start').addEventListener('click', startQuiz);
+$('#quiz-exit').addEventListener('click', finishQuiz);
 for (let li of $('li', true)) {
     li.addEventListener('click', evalAnswer);
 }
