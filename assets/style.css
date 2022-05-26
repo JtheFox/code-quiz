@@ -94,3 +94,49 @@ html {
 #quiz-answers li:hover {
     background: gray;
 }
+
+.hiscores-input {
+    font-size: 2rem;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    right: 30%;
+    bottom: 45%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.hiscores-input p {
+    margin-top: 0;
+}
+
+.initials-input {
+    display: flex;
+}
+
+.initials-input input {
+    font-size: 2rem;
+    margin-left: 0.5em;
+    height: fit-content;
+    width: 2em;
+    border: none;
+    align-items: center;
+    text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+    .hiscores-input {
+        font-size: 1.1rem;
+        top: 25%;
+        left: 10%;
+        right: 10%;
+        bottom: 50%;
+    }
+
+    .hiscores-input .initials-input input {
+        font-size: 1.1rem;
+    }
+}
