@@ -20,7 +20,7 @@ const questionList = [
         ],
         answer: 'string'
     }, {
-        question: 'Which of the following would you use to change a localStorage item back to a JavaScript object',
+        question: 'Which of the following would you use to change a localStorage item back to a JavaScript object?',
         choices: [
             'JSON.stringify()',
             'JSON.parse()',
