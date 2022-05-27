@@ -29,7 +29,7 @@ function startQuiz() {
     timer = setInterval(function () {
         time--;
         if (time < 0) finishQuiz;
-        
+
         $('#timer').innerText = time;
         if (time < 10) $('#timer').innerText = `0${time}`;
     }, 1000);
@@ -40,7 +40,7 @@ clear timer interval, hide quiz window, display hiscores input
 */
 function finishQuiz() {
     clearInterval(timer);
-    if(time < 0) time = 0;
+    if (time < 0) time = 0;
     $('.quiz-window').style.display = 'none';
     $('.clear-hiscores').style.display = 'block';
 
@@ -48,6 +48,7 @@ function finishQuiz() {
     $('#final-score').textContent = points;
     $('#final-time').textContent = time;
     $('.modal').style.display = 'block';
+    $('#initials').focus();
 }
 
 /* evaluate user answer choice function
@@ -94,10 +95,10 @@ create user object, get, add to, and set hiscores from localStorage
 */
 function submitHiscore() {
     let user = {
-        initials: $('#initials').value?.substring(0,4).toUpperCase() || 'ANON',
+        initials: $('#initials').value?.substring(0, 4).toUpperCase() || 'ANON',
         score: points
     }
- 
+
     let hiscores = JSON.parse(localStorage.getItem('hiscores')) || [];
     hiscores.push(user);
     hiscores.sort((a, b) => { return b.score - a.score; }); // sort by highest score first
@@ -114,7 +115,7 @@ function updateHiscores() {
     let hiscores = JSON.parse(localStorage.getItem('hiscores')) || [];
     $('.hiscores-list').innerHTML = '';
     // get top 5 scores
-    for (let user of hiscores.slice(0,5)) {
+    for (let user of hiscores.slice(0, 5)) {
         // create hiscore display elements
         let hiscoreUser = document.createElement('div');
         hiscoreUser.classList.add('user-score');
@@ -136,9 +137,10 @@ function clearHiscores() {
 // create event listeners
 $('.quiz-start').addEventListener('click', startQuiz);
 $('#quiz-exit').addEventListener('click', finishQuiz);
-$('#submit-hiscore').addEventListener('click', submitHiscore);
 $('#quiz-answers').addEventListener('click', evalAnswer);
-$('.clear-hiscores').addEventListener('click', function() { localStorage.removeItem('hiscores'); updateHiscores(); });
+$('#submit-hiscore').addEventListener('click', submitHiscore);
+$('#initials').addEventListener('keydown', function (event) { if (event.key.toLowerCase() === 'enter') submitHiscore(); });
+$('.clear-hiscores').addEventListener('click', function () { localStorage.removeItem('hiscores'); updateHiscores(); });
 
 // display hiscores on page load
 updateHiscores();
