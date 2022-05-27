@@ -22,4 +22,3 @@ This is a quiz to test your knowledge on JavaScript. Give it a try!
 ## Resources
 - [Live Site](https://jthefox.github.io/code-quiz/)
 - [Online Repository](https://github.com/JtheFox/code-quiz)
-- [Quiz Questions Source](https://www.tutorialspoint.com/javascript/javascript_online_quiz.htm)

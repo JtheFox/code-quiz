@@ -2,49 +2,49 @@
 // questions from https://www.tutorialspoint.com/javascript/javascript_online_quiz.htm
 const questionList = [
     {
-        question: 'Which of the following type of variable is visible everywhere in your JavaScript code?',
+        question: 'Which is the following is a function of JavaScript Arrays?',
         choices: [
-            'global variable',
-            'local variable',
-            'Both of the above',
-            'None of the above'
-        ],
-        answer: 'global variable'
-    }, {
-        question: 'Which of the following function of Array object reverses the order of the elements of an array?',
-        choices: [
-            'reverse()',
             'push()',
-            'reduce()',
-            'invert()'
+            'reverse()',
+            'splice()',
+            'All of the above'
         ],
-        answer: 'reverse()'
+        answer: 'All of the above'
     }, {
-        question: 'Which of the following type of variable takes precedence over other if names are same?',
+        question: 'What format are localStorage items stored in?',
         choices: [
-            'global variable',
-            'local variable',
-            'Both of the above',
-            'None of the above'
+            'float',
+            'object',
+            'string',
+            'Array'
         ],
-        answer: 'local variable'
+        answer: 'string'
     }, {
-        question: 'Which built-in method returns the calling string value converted to lower case?',
+        question: 'Which of the following would you use to change a localStorage item back to a JavaScript object',
         choices: [
-            'changeCase(lower)',
-            'toLower()',
-            'lowerCase()',
-            'toLowerCase()'
+            'JSON.stringify()',
+            'JSON.parse()',
+            'JSON.toObject()',
+            'Object.parse()'
         ],
-        answer: 'toLowerCase()'
+        answer: 'JSON.parse()'
     }, {
-        question: 'Which of the following function of String object is used to find a match between a regular expression and a string, and to replace the matched substring with a new substring?',
+        question: 'Which of the following returns an div with the id of "myDiv"?',
         choices: [
-            'concat()',
-            'match()',
-            'replace()',
-            'search()'
+            'document.querySelector("div#myDiv")',
+            'document.querySelector("#myDiv")',
+            'document.getElementById("myDiv")',
+            'All of the above'
         ],
-        answer: 'replace()'
+        answer: 'All of the above'
+    }, {
+        question: 'Where can you set style properties for an element?',
+        choices: [
+            'In the HTML',
+            'In the CSS',
+            'In the JavaScript',
+            'All of the above'
+        ],
+        answer: 'All of the above'
     }
 ]
