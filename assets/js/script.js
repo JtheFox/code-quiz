@@ -50,9 +50,15 @@ function finishQuiz() {
     $('.modal').style.display = 'block';
 }
 
+/* evaluate user answer choice function
+get answer choice selected by user, compare it to correct answer for current question
+deduce time/add points based on result, move to next question/finish quiz
+*/
 function evalAnswer(event) {
+    // return if answer choice wasn't clicked
+    if (event.target.tagName.toLowerCase() !== 'li') return;
     // get the answer choice clicked by the user
-    let ansChoice = event.currentTarget.textContent;
+    let ansChoice = event.target.textContent;
 
     // compare user answer to correct answer of current question
     // calculate points/time change based on maximum value divided by number of questions
@@ -131,9 +137,7 @@ function clearHiscores() {
 $('.quiz-start').addEventListener('click', startQuiz);
 $('#quiz-exit').addEventListener('click', finishQuiz);
 $('#submit-hiscore').addEventListener('click', submitHiscore);
-for (let li of $('li', true)) {
-    li.addEventListener('click', evalAnswer);
-}
+$('#quiz-answers').addEventListener('click', evalAnswer);
 $('.clear-hiscores').addEventListener('click', function() { localStorage.removeItem('hiscores'); updateHiscores(); });
 
 // display hiscores on page load
