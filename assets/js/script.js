@@ -28,15 +28,10 @@ function startQuiz() {
     // create timer
     timer = setInterval(function () {
         time--;
-        if (time < 0) {
-            time = 0;
-            finishQuiz();
-        }
+        if (time < 0) finishQuiz;
         
         $('#timer').innerText = time;
-        if (time < 10) {
-            $('#timer').innerText = `0${time}`;
-        }
+        if (time < 10) $('#timer').innerText = `0${time}`;
     }, 1000);
 }
 
@@ -45,6 +40,7 @@ clear timer interval, hide quiz window, display hiscores input
 */
 function finishQuiz() {
     clearInterval(timer);
+    if(time < 0) time = 0;
     $('.quiz-window').style.display = 'none';
     $('.clear-hiscores').style.display = 'block';
 
