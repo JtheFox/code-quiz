@@ -91,7 +91,7 @@ function submitHiscore() {
         initials: $('#initials').value?.substring(0,4).toUpperCase() || 'ANON',
         score: points
     }
-
+ 
     let hiscores = JSON.parse(localStorage.getItem('hiscores')) || [];
     hiscores.push(user);
     hiscores.sort((a, b) => { return b.score - a.score; }); // sort by highest score first
