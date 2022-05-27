@@ -1,37 +1,37 @@
 /* Root and global elements */
 html {
-    font-size: 24px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100%;
     background: rgb(61,190,242);
     background: radial-gradient(circle, rgba(61,190,242,1) 0%, rgba(0,206,255,1) 68%, rgba(61,190,242,1) 100%);
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100%;    
+    background-size: cover;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;    
 }
 
 .content {
-    margin-top: 10%;
     display: flex;
     align-items: baseline;
     justify-content: space-evenly;
+    margin-top: 10%;
 }
 
 button:not(.quiz-title-bar>button) {
-    background: white;
     padding: 0.25em 0.5em;
-    font-size: 1em;
     border: 2px solid gray;
     border-radius: 0.25rem;
+    background: white;
     box-shadow: 0px 2px 1px gray;
+    font-size: 1em;
     transition: all 0.1s ease-in-out;
 }
 
 button:not(.quiz-title-bar>button):hover {
-    color: #222;
-    background: lightblue;
     border: 2px solid navy;
+    background: lightblue;
     box-shadow: 0px 2px 1px navy;
+    color: #222;
 }
 
 button:not(.quiz-title-bar>button):active {
@@ -41,12 +41,12 @@ button:not(.quiz-title-bar>button):active {
 
 /* Info box with start button */
 .info {
-    text-shadow: 0.05em 0.05em 0.1em black;
-    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
     text-align: center;
+    text-shadow: 0.05em 0.05em 0.1em black;
 }
 
 .info > h1 {
@@ -55,13 +55,13 @@ button:not(.quiz-title-bar>button):active {
 
 /* Hiscores display */
 .hiscores-display {
-    padding: 0.25em 0.75em;
-    border-radius: 0.5em;
-    border: 4px solid white;
     min-height: 10rem;
+    padding: 0.25em 0.75em;
+    border: 4px solid white;
+    border-radius: 0.5em;
     box-shadow: 0px 0px 2px black;
-    text-shadow: 0 0.1em 0.05em black;
     color: white;
+    text-shadow: 0 0.1em 0.05em black;
 }
 
 .hiscores-display > h2 {
@@ -70,13 +70,13 @@ button:not(.quiz-title-bar>button):active {
 }
 
 .hiscores-display .user-score {
-    background: rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-evenly;
-    text-shadow: 0 0.06em 0.05em black;
     margin: 0.25em;
     padding: 0.15em;
     border-radius: 00.25em;
+    background: rgba(0, 0, 0, 0.1);
+    text-shadow: 0 0.06em 0.05em black;
 }
 
 .hiscores-display .user-score p {
@@ -86,27 +86,27 @@ button:not(.quiz-title-bar>button):active {
 
 /* Quiz display window */
 .quiz-window {
-    background-color: lightblue;
-    border-radius: 0.2rem 0.2rem 2rem 2rem;
+    display: none;
     position: absolute;
     top: 5%;
-    left: 5%;
     right: 5%;
     bottom: 5%;
-    display: none;
+    left: 5%;
     flex-direction: column;
+    border-radius: 0.2rem 0.2rem 2rem 2rem;
+    background-color: lightblue;
 }
 
 .quiz-window :is(.quiz-title-bar, .quiz-status) {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .quiz-window .quiz-title-bar {
-    background: navy;
     margin: 0;
     border-radius: 0.2rem 0.2rem 0 0;
+    background: navy;
 }
 
 .quiz-title-bar p {
@@ -115,11 +115,11 @@ button:not(.quiz-title-bar>button):active {
 }
 
 .quiz-title-bar button {
+    width: 3%;
+    min-width: 1em;
+    height: 100%;
     border: none;
     border-radius: 0 0.2rem 0 0;
-    height: 100%;
-    min-width: 1em;
-    width: 3%;
     font-size: 1em;
     text-align: center;
     transition: all 0.1s ease-in-out;
@@ -135,8 +135,8 @@ button:not(.quiz-title-bar>button):active {
 }
 
 :is(.quiz-status, .quiz-content) {
-    padding: 0 1rem;
     margin: 0.25rem;
+    padding: 0 1rem;
 }
 
 .quiz-status p:first-child {
@@ -149,10 +149,10 @@ button:not(.quiz-title-bar>button):active {
 }
 
 .quiz-content {
-    margin-top: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 5%;
     overflow: auto;
 }
 
@@ -166,21 +166,21 @@ button:not(.quiz-title-bar>button):active {
 }
 
 .quiz-content #quiz-answers li {
-    list-style-type: none;
-    background-color: white;
     width: 20rem;
     height: fit-content;
     margin: 0.5rem;
     padding: 0.75rem 1rem;
     overflow: auto;
-    cursor: pointer;
     border-radius: 0.5rem;
+    background-color: white;
+    list-style-type: none;
+    cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
 #quiz-answers li:hover {
-    background: navy;
     transform: translateX(-0.4rem);
+    background: navy;
     color: white;
 }
 
@@ -207,20 +207,20 @@ button:not(.quiz-title-bar>button):active {
 .hiscores-input {
     display: flex;
     flex-direction: column;
-    padding: 0.1rem;
-    justify-content: center;
     align-items: center;
-    background-color: lightgray;
-    color: black;
+    justify-content: center;
     width: fit-content;
     margin: auto;
+    padding: 0.1rem;
     padding: 1.5rem 2rem;
     border-radius: 1rem;
+    background-color: lightgray;
+    color: black;
 }
 
 .hiscores-input p {
-    text-align: center;
     margin-top: 0;
+    text-align: center;
 }
 
 .initials-input {
@@ -229,13 +229,13 @@ button:not(.quiz-title-bar>button):active {
 }
 
 .initials-input input {
-    font-size: 1rem;
-    margin-left: 0.5em;
-    height: fit-content;
+    align-items: center;
     width: 2em;
+    height: fit-content;
+    margin-left: 0.5em;
     border: none;
     border-radius: 0.25rem;
-    align-items: center;
+    font-size: 1rem;
     text-align: left;
 }
 
@@ -245,11 +245,11 @@ button:not(.quiz-title-bar>button):active {
 
 /* clear hiscores button */
 .clear-hiscores {
-    text-align: center;
     position: absolute;
+    right: 45%;
     bottom: 5%;
     left: 45%;
-    right: 45%;
+    text-align: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -294,12 +294,12 @@ button:not(.quiz-title-bar>button):active {
     }
 
     .quiz-window .quiz-status {
-        margin-top: 0.5rem;
-        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-top: 0.5rem;
+        text-align: center;
     }
 
     .quiz-status p {
@@ -307,10 +307,10 @@ button:not(.quiz-title-bar>button):active {
     }
 
     .quiz-content {
-        margin-top: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 0;
         overflow: auto;
     }
 
@@ -326,8 +326,8 @@ button:not(.quiz-title-bar>button):active {
 
     /* prevent li animations on mobile */
     #quiz-answers li:hover {
-        background: white;
         transform: translateX(0);
+        background: white;
         color: black;
     }
 
